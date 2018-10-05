@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html>
+<head>
+</head>
 <body>
-
-<h2>JavaScript Strings</h2>
-
 <p id="demo"></p>
-
 <script>
-var x = "Ana";  // String written inside quotes
-//.split() x = ["J","o","h","n","","D","o","e"];
-//.reverse() && .join()
-var w = x.split("");
-w = w.reverse()
-w = w.join("");
+function palindromo(){
+var cadena = "";
+//document.getElementById("demo").innerHTML= cadena; 
+cadena = cadena.replace(/ /g,"");
+var str = cadena.split("");
+str = str.reverse().join("");
+var contenedor = document.getElementById("demo");
+if(str.length == 0 )
+{
+	return alert("the array is empty");
+}else if(cadena === str)
+{
+	contenedor.innerHTML= str; 
 
-function palindromo(cadena){
-var i, ind;
-var cad1 = [];
-for (var x = 0; x>=cad1.length; x++){
-	if (cad1.)
+}else
+{
+	return alert("no es palindromo");
+}//nombre = miguel; nombre+= lopez;
 }
-}
-//console.log(w);
-//console.log(z);
-document.querySelector("#demo").innerHTML = w;
-document.querySelector("#demo").innerHTML = z;
-//getElementById("demo").innerHTML = x[2];
+setTimeout(palindromo(), 10);
+palindromo();
 </script>
-
 </body>
 </html>
-
-
