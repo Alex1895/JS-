@@ -1,31 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-<p id="demo"></p>
-<script>
 function palindromo(){
-var cadena = "";
-//document.getElementById("demo").innerHTML= cadena; 
-cadena = cadena.replace(/ /g,"");
-var str = cadena.split("");
-str = str.reverse().join("");
-var contenedor = document.getElementById("demo");
-if(str.length == 0 )
-{
-	return alert("the array is empty");
-}else if(cadena === str)
-{
-	contenedor.innerHTML= str; 
-
-}else
-{
-	return alert("no es palindromo");
-}//nombre = miguel; nombre+= lopez;
+    var v_input = document.getElementById("input_palindromo").value;
+    var cadena = v_input;
+    //console.log (cadena);
+    cadena = cadena.trim().replace(/s/g,"").toLowerCase();
+    //cadena = cadena.toUpperCase();
+    var cadaux = cadena;
+    var palindromo = cadaux.split("").reverse().join("");
+    //console.log(palindromo);
+    var html = document.getElementById("result_palindromo");
+    if (cadaux === palindromo)
+    {
+        alert ("es palindromo "+ palindromo);
+        html.innerHTML=palindromo;
+    }else{
+        alert ("no es palindromo "+ cadena);
+        html.innerHTML=cadena;
+    }
+    html.innerHTML = cadaux;
 }
-setTimeout(palindromo(), 10);
 palindromo();
-</script>
-</body>
-</html>
