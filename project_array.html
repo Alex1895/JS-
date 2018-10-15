@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html>
 <body>
+<div>
+<p>Click en los botones de add a un array o del un elemento de un array</p>
 
-<p>Click the button to add new elements to the array.</p>
-
-<button onclick="myFunction()">Try it</button>
+<button onclick="myFunction()">add</button> <button onclick="del()">Del</button>
 
 <p id="demo"></p>
 
 <script>
-var FMF = ["chivas","cruz_azul","america","pumas"];
-document.getElementById("demo").innerHTML = FMF;
+	var FMF = ["chivas","cruz_azul","america","pumas"];
+	document.getElementById("demo").innerHTML = FMF;
 
 function myFunction() {
     FMF.push("atlas","puebla");
     document.getElementById("demo").innerHTML = FMF;
-    FMF.pop("america");
+}
+function del(){
+	FMF.pop(); //elimina el ultimo elemento
     document.getElementById("demo").innerHTML = FMF;
+	delete FMF[2];
+document.getElementById("demo").innerHTML = FMF;
 }
 </script>
-
+</div>
 </body>
 </html>
