@@ -1,33 +1,44 @@
-var html = document.getElementById("result_palindromo");
-//html.innerHTML=frutas;
-var txt= document.getElementById("input_palindromo").value;
-function arrays(){
-var frutas = ["kiwi","pera","durazno","manzana"];
-var txt= document.getElementById("input_palindromo").value;
+<!DOCTYPE html>
+<html>
+<body>
+
+<p></p>
+
+<p id="demo"></p>
+<input id="txt" type="text"></input>
+<button onclick="printarray()">print</button>
+<button onclick="add()">add</button>
+<button onclick="del()">del</button>
+
+<script>
+var FMF = ["chivas","cruz_azul","america","pumas"];
+	
+function printarray() {
+ 	document.getElementById("demo").innerHTML = FMF;
 }
 function add(){
-    //var tienda = {frutas :["kiwi","pera","durazno","manzana"], sodas:["manzanita","coca-cola","fanta"]};
-    if (txt.length > 0 ){
-        alert("text_field empty");
+	
+	var txt = document.getElementById("txt").value;
+    if(txt == 0){
+    	alert ("textfield is empty");
     }else{
-        frutas.push(txt);
-    html.innerHTML=frutas;
-    }
-}
-function del(){
-    if(txt.length > 0){
-        alert ("text_field empty");
-    }else{
-        frutas.pop(txt);
-    html.innerHTML=frutas;
-    }
-}
-function print(){
-    if(frutas.length >0 ){
-        alert ("the string is empty");
-    }else {
-        html.innerHTML=frutas;
+    	FMF.push(txt);
+        printarray();
+        
     }
     
 }
-arrays(); 
+function del(){
+	var deltxt = FMF.indexOf(document.getElementById("txt").value);
+    if (deltxt > -1){
+    	FMF.splice(deltxt, 1);
+        printarray();
+    }else{
+    	alert ("Element not found!");
+    	printarray();	
+    }
+}
+</script>
+
+</body>
+</html>
