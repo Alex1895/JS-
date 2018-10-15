@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Click the button to add new elements to the array.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+var FMF = ["chivas","cruz_azul","america","pumas"];
+document.getElementById("demo").innerHTML = FMF;
+
+function myFunction() {
+    FMF.push("atlas","puebla");
+    document.getElementById("demo").innerHTML = FMF;
+    FMF.pop("america");
+    document.getElementById("demo").innerHTML = FMF;
+}
+</script>
+
+</body>
+</html>
