@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div>
+<h2>Convert a string written in JSON format, into a JavaScript object.</h2>
+<p id="demo"></p>
+<input id="txt" type="text"></input>
+</div><br>
+<div>
+<button onclick="printjson()">print</button>
+<button onclick="add()">add</button>
+<button onclick="del()">del</button>
+<button onclick="textarea()">textarea</button>
+</div>
+<script>
+var myJSON = '{"name":"John","age":31,"city":"New York"}';
+//var myObj = JSON.parse(myJSON);
+printarray();
+
+function printjson() {
+ 	document.getElementById("demo").innerHTML = myJSON ;
+}
+function add(){
+	
+	var txt = document.getElementById("txt").value;
+    if(txt == 0){
+    	alert ("textfield is empty or textarea is empty please write something");
+    }else{
+    	//myJSON.push(txt);
+        printjson();
+		myJSON[txt]={document.getElementById("txt").value:[1,2,3]}; 
+    }   	
+//myJSON["agus"]="listo";   
+}
+
+</script>
+
+</body>
+</html>
