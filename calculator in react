@@ -1,0 +1,90 @@
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import Hello from './Hello';
+import './style.css';
+
+let num1, num2;
+
+class App extends Component {
+  constructor() {
+    this.res_method = this.res_method.bind(this);
+    super();
+    this.state = {
+      name: 'React'
+    };
+  }
+  sum_method(){
+  let x = document.getElementById("num").value; 
+  let y = document.getElementById("num1").value;   
+    if(x == "" || y == "" ){
+      alert ("please write something");
+    }else{
+    num1 = document.getElementById("num").value;
+    console.log(num1);
+    num2 = document.getElementById("num1").value;
+    console.log(num2);
+    let num3 = (parseInt(num1)+ parseInt(num2));
+    document.getElementById("result").innerHTML= num3;
+    }
+  }
+  res_method(){
+    let x = document.getElementById("num").value;
+    let y = document.getElementById("num1").value;
+     if(x == "" || y == "" ){
+      alert ("please write something");
+    }else{
+    num1 = document.getElementById("num").value;
+    console.log(num1);
+    num2 = document.getElementById("num1").value;
+    console.log(num2);
+    let num3 = num1 - num2;
+    document.getElementById("result").innerHTML=parseInt(num3);
+    }
+  }
+  mul_method(){
+    let x = document.getElementById("num").value;
+    let y = document.getElementById("num1").value;
+     if(x == "" || y == "" ){
+      alert ("please write something");
+    }else{
+    num1 = document.getElementById("num").value;
+    console.log(num1);
+    num2 = document.getElementById("num1").value;
+    console.log(num2);
+    let num3 = num1 * num2;
+    document.getElementById("result").innerHTML=parseInt(num3);
+    }
+  }
+  div_method(){
+    let x = document.getElementById("num").value;
+    let y = document.getElementById("num1").value;
+     if(x == "" || y == "" ){
+      alert ("please write something");
+    }else{
+    num1 = document.getElementById("num").value;
+    console.log(num1);
+    num2 = document.getElementById("num1").value;
+    console.log(num2);
+    let num3 = num1 / num2;
+    document.getElementById("result").innerHTML= parseInt(num3);
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Hello name={this.state.name} />
+        <label> Please write something on input</label><br/><br/>
+        <label> Num1</label>                    <label> Num2</label><br/>
+        <input id="num" type="number"></input> <input id="num1" type="number"></input>
+        <p id="result"></p><br/>
+        <button onClick={this.sum_method.bind(this)}>sum</button>     
+        <button onClick={this.res_method.bind(this)}>res</button><br/><br/>
+        <button onClick={this.mul_method.bind(this)}>mul</button>  
+        <button onClick={this.div_method.bind(this)}>div</button>
+      </div>
+    );
+  }
+}
+
+render(<App />, document.getElementById('root'));
